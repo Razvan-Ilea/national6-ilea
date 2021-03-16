@@ -42,4 +42,28 @@ function renderArticle(articleData) {
 
   articleTitle.innerText = articleData.title;
   articleContent.innerText = articleData.content;
+
+  fetch(`https://simple-json-server-scit.herokuapp.com/comments?postId=${articleData.id}`)
+    .then(handleFetchResponse)
+    .then((json) => {
+      const commentDiv = document.createElement('div')
+      for (const commentData of json){
+        const comment = document.createElement('div')
+        comment.style.paddingLeft = '20px';
+        const user = document.createElement('h4')
+        const userComment = document.createElement('p')
+
+        comment.appendChild(user)
+        comment.appendChild(userComment)
+        commentDiv.appendChild(comment)
+
+        user.innerText = commentData.username;
+        userComment.innerText = commentData.content
+      }
+      article.appendChild(commentDiv)
+    })
+    
+
+    
+   
 }
