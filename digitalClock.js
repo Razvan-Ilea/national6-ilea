@@ -67,6 +67,11 @@ function reset() {
     hours = 0;
     hoursParagraphs[0].innerText = 0;
     hoursParagraphs[1].innerText = 0;
+
+//     better option
+//     renderDigits(seconds, secondsParagraphs);
+//     renderDigits(minutes, minutesParagraphs);
+//     renderDigits(hours, hoursParagraphs);
 }
 
 
@@ -106,6 +111,11 @@ function save() {
   pMinutesTwo.innerText = minutesParagraphs[1].innerText + ':';
   pSecondsOne.innerText = secondsParagraphs[0].innerText;
   pSecondsTwo.innerText = secondsParagraphs[1].innerText;
+
+//  better option 
+//  const clock = document.querySelector('.digital-clock')
+//  const clockCopy = clock.cloneNode(true);
+//  document.body.appendChild(clockCopy);
 }
 
 function renderDigits(nr, pList) {
