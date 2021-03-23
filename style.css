@@ -1,0 +1,53 @@
+body {
+    margin: 0px;
+}
+
+#header {
+    display: flex;
+    background-color: rgb(246,125,133);
+    height: 60px;
+    align-items: center;
+    color: rgb(253, 253, 253);
+    font-family: 'Ranchers', cursive;
+    font-size: 18px;
+}
+
+.task-div {
+    display: flex;
+    align-items: center;
+    font-family: 'Ranchers', cursive;
+    padding: 10px;
+    height: 15px;
+}
+
+#new-task {
+    padding: 8px 0px 0px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.checklist-png {
+    height: 35px;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+
+#plus {
+    height: 25px;
+    padding-left: 15px;
+    
+}
+
+#plus:hover {
+    filter: hue-rotate(230deg);
+}
+
+.delete-button {
+    height: 20px;
+    padding-left: 15px;
+    
+}
+
+.task-content {
+    padding: 10px;
+}
