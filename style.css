@@ -19,7 +19,7 @@
         transform: translate(2px)
     }
     50% {
-        transform: translate(px)
+        transform: translate(0px)
     }
     75% {
         transform: translate(-2px)
