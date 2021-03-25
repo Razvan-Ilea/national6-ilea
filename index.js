@@ -39,4 +39,4 @@ class Spaceship {
 let newSpaceship;
 document.getElementById('generate-spaceship').addEventListener('click', function() {
     newSpaceship = new Spaceship();
-})
+});
