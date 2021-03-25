@@ -1,0 +1,14 @@
+body {
+    background-image: url(https://cdn.wallpapersafari.com/32/99/FTcskA.jpg);
+}
+
+#generate-spaceship {
+    display: block;
+    height: 30px;
+    border-radius: 10px;   
+}
+
+.spaceship {
+    height: 50px;
+    display: block;
+}
