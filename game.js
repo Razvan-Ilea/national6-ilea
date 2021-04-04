@@ -91,22 +91,43 @@ class ObstacleFactory {
 
 class Lives {
   constructor() {
-    
     this.generateLives()
   }
 
   generateLives() {  
-      this.lives =  document.createElement("img");
-      this.lives.src = 'heart.png'
-      this.lives.style.height = '30px'
-      this.lives.style.position = 'relative'
-      this.lives.style.top = '-267px';
-      this.lives.style.left = '-550px';
-      document.body.appendChild(this.lives)
+      this.lives1 =  document.createElement("img");
+      this.lives1.src = 'heart.png'
+      this.lives1.style.height = '30px'
+      this.lives1.style.position = 'relative'
+      this.lives1.style.top = '-267px';
+      this.lives1.style.left = '-550px';
+      document.body.appendChild(this.lives1)
+
+      this.lives2 =  document.createElement("img");
+      this.lives2.src = 'heart.png'
+      this.lives2.style.height = '30px'
+      this.lives2.style.position = 'relative'
+      this.lives2.style.top = '-267px';
+      this.lives2.style.left = '-550px';
+      document.body.appendChild(this.lives2)
+
+      this.lives3 =  document.createElement("img");
+      this.lives3.src = 'heart.png'
+      this.lives3.style.height = '30px'
+      this.lives3.style.position = 'relative'
+      this.lives3.style.top = '-267px';
+      this.lives3.style.left = '-550px';
+      document.body.appendChild(this.lives3)
   }
 
-  destroyLives() {
-    this.lives.remove() 
+  destroyLives1() {
+    this.lives1.remove() 
+  }
+  destroyLives2() {
+    this.lives2.remove() 
+  }
+  destroyLives3() {
+    this.lives3.remove() 
   }
 }
 
@@ -159,10 +180,6 @@ function collisionDetection(player, obstacles) {
 }
 
 const lives = new Lives();
-const live2 = new Lives();
-const live3 = new Lives();
-const ex = [lives, live2, live3];
-console.log(ex);
 const player = new Player();
 const obstacleFactory = new ObstacleFactory();
 
@@ -178,19 +195,27 @@ let gameLoop = setInterval(() => {
   if (count % 10 === 0) obstacleFactory.createObstacle();
 
   obstacleFactory.moveObstacles();
+
+  let current = 3
   if (collisionDetection(player, obstacleFactory.obstacles)) {
-    //lives.destroyLives();
-    for (let i = 0; i < ex.length; i++) {
-      ex[i].destroyLives();
-      
+    if (current === 3) {
+      lives.destroyLives1()
+      current = current -1;
     }
-    // if (lives.livesNumber <= -30) {
-    //   alert('You lost')
-    //   clearInterval(gameLoop);
-    //   window.location = "/";
-    // }
+    if (current === 2) {
+      lives.destroyLives2()
+      current = current -1;
+    } 
+    if (current === 1) {
+      lives.destroyLives3();
+      clearInterval(gameLoop);
+      alert("You hit an obstacle");
+      window.location = "/";
+    }
   }
 
+  
+  
   obstacleFactory.destroyObstacles();
   
   
