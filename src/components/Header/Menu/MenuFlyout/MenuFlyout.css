@@ -1,0 +1,9 @@
+.app-menu-flyout {
+  padding: 5px 25px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px -1px rgba(201, 201, 201, 1);
+  position: relative;
+  top: 45px;
+  left: 20px;
+}
